@@ -1,15 +1,16 @@
-window.addEventListener("DOMContentLoaded",() => {
-    const openModal = document.querySelector('[data-action="open-modal"]');
-    const closeModal = document.querySelector('[data-action="close-modal"]');
-    const modal = document.querySelector('.modal');
-    const backdrop = document.querySelector('.backdrop');
+'use strict'
 
-    openModal.addEventListener('click', toggleModal);
-    closeModal.addEventListener('click', toggleModal);
+const openModal = document.querySelector('[data-action="open-modal"]');
+const closeModal = document.querySelector('[data-action="close-modal"]');
+const modal = document.querySelector('.modal');
 
-    function toggleModal() {
-        backdrop.style.opacity = "1";
-        backdrop.style.visibility = "visible";
-    }
+openModal.addEventListener('click', toggleModal);
+closeModal.addEventListener('click', toggleModal);
 
-})
+function toggleModal() {
+    const body = document.body;
+    body.classList.toggle('.show-modal');
+}
+
+openModal.addEventListener('click', toggleModal);
+closeModal.addEventListener('click', toggleModal);
